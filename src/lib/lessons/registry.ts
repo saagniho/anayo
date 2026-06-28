@@ -38,7 +38,13 @@ export const WORLDS: World[] = [
         concept: "Computers turn words into tokens and numbers (embeddings).",
         hook: "How does a computer 'read' a word?",
         ability: { id: "read", label: "READ", icon: "📖" },
-        live: false,
+        aha: {
+          explorer:
+            "You never wrote a number — but Anayo turned every word into one all by itself! Same word always gets the same number, and that's exactly how AI 'reads': it's not reading English, it's doing math with numbers. 🔢",
+          curious:
+            "What you just did is tokenisation and vocabulary building. Each unique token maps to an integer ID, which gets looked up in a learned embedding matrix to produce a dense vector. The model never sees raw text — it sees sequences of integers from a fixed vocabulary. That's the input layer of every language model.",
+        },
+        live: true,
       },
     ],
   },

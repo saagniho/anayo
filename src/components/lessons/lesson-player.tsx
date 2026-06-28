@@ -6,10 +6,12 @@ import { useMode } from "@/lib/mode/mode-context";
 import { AnayoBuddy } from "@/components/anayo-buddy";
 import type { LessonMeta, ToyProps } from "@/lib/lessons/types";
 import { WhatIsAiToy } from "./toys/what-is-ai";
+import { WordsIntoNumbersToy } from "./toys/words-into-numbers";
 
 /** Slug → interactive toy. Adding a playable lesson = add one entry here. */
 const TOYS: Record<string, ComponentType<ToyProps>> = {
   "what-is-ai": WhatIsAiToy,
+  "words-into-numbers": WordsIntoNumbersToy,
 };
 
 type Phase = "hook" | "play" | "aha" | "done";

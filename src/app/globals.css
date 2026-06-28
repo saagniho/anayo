@@ -179,6 +179,17 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .taught b{color:var(--ink);}
 .hint{text-align:center;color:var(--amber);font-weight:600;font-size:13.5px;margin:0 0 12px;animation:fadeUp .3s ease both;}
 
+/* ───────────────────────── tokenizer toy ───────────────────────── */
+.tok-input{width:100%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.18);border-radius:12px;color:#fff;font-size:1.05rem;padding:.75rem 1rem;resize:none;outline:none;font-family:var(--body);transition:border-color .2s;margin-bottom:18px;}
+.tok-input:focus{border-color:var(--violet);}
+.tok-input::placeholder{color:rgba(255,255,255,.35);}
+.tok-field{display:flex;flex-wrap:wrap;gap:.6rem;padding:.4rem 0 14px;justify-content:center;}
+.tok-chip{display:flex;flex-direction:column;align-items:center;gap:.3rem;animation:chipIn .18s ease both;}
+@keyframes chipIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.tok-word{background:var(--chip-c,var(--violet));color:#fff;padding:.3rem .7rem;border-radius:9px;font-size:1rem;font-weight:700;font-family:var(--display);letter-spacing:.02em;box-shadow:0 4px 12px rgba(0,0,0,.25);}
+.tok-id{font-size:.75rem;font-weight:700;color:var(--chip-c,var(--violet));font-family:monospace;animation:numPop .25s cubic-bezier(.34,1.56,.64,1) both;}
+@keyframes numPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
   .worlds{grid-template-columns:repeat(2,1fr);}
