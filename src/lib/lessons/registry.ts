@@ -176,7 +176,13 @@ export const WORLDS: World[] = [
         concept: "Agentic workflows break a goal into steps, loops and checks.",
         hook: "How does AI tackle a big, messy job?",
         ability: { id: "plan", label: "PLAN", icon: "🧩" },
-        live: false,
+        aha: {
+          explorer:
+            "You just ran Anayo's brain like a to-do list! Big goals feel impossible until you break them into small steps. Each step checks the last one worked, and one by one they add up to something amazing. That's how every AI agent tackles a big job. 🧩",
+          curious:
+            "What you saw is the plan-then-execute loop at the core of agentic workflows. The agent first generates a plan (decomposition), then iterates over each subtask — checking outputs before proceeding. This grounded, sequential execution is why agents can handle multi-step work that single-shot prompting can't.",
+        },
+        live: true,
       },
       {
         id: "l4-3",

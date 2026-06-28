@@ -313,6 +313,33 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .at-result-footer{font-size:13px;color:var(--mute);padding-top:8px;border-top:1px solid var(--glass-brd);line-height:1.5;}
 @keyframes atSlide{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 
+/* ───────────────────────── step-by-step toy (lesson 9) ───────────────────────── */
+.sbs-wrap{display:flex;flex-direction:column;gap:18px;max-width:520px;margin:0 auto;}
+.sbs-goal{background:rgba(255,122,89,.1);border:2px solid rgba(255,122,89,.4);border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:5px;}
+.sbs-goal-tag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#ff7a59;}
+.sbs-goal-text{font-size:17px;font-weight:700;color:var(--ink);}
+.sbs-progress{font-size:14px;font-weight:600;color:var(--mute);text-align:center;margin:0;}
+.sbs-steps{display:flex;flex-direction:column;gap:8px;}
+.sbs-step{border-radius:14px;border:1.5px solid var(--glass-brd);background:var(--glass);overflow:hidden;transition:border-color .2s,background .2s;}
+.sbs-step.sbs-done{border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.06);}
+.sbs-step.sbs-running{border-color:#ff7a59;background:rgba(255,122,89,.06);}
+.sbs-step.sbs-next{border-color:rgba(255,122,89,.5);}
+.sbs-step.sbs-locked{opacity:.38;}
+.sbs-head{display:flex;align-items:center;gap:10px;padding:14px 16px;}
+.sbs-num{width:26px;height:26px;border-radius:50%;background:var(--glass-brd);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--mute);flex-shrink:0;transition:background .2s,color .2s;}
+.sbs-done .sbs-num{background:var(--green);color:#fff;}
+.sbs-icon{font-size:20px;flex-shrink:0;}
+.sbs-label{flex:1;font-size:15px;font-weight:600;color:var(--ink);}
+.sbs-run{border:1.5px solid #ff7a59;border-radius:20px;background:rgba(255,122,89,.12);color:#ff7a59;font-size:13px;font-weight:700;padding:5px 14px;cursor:pointer;transition:all .18s;white-space:nowrap;flex-shrink:0;}
+.sbs-run:hover{background:#ff7a59;color:#fff;}
+.sbs-spin{font-size:18px;color:#ff7a59;animation:sbsSpin 1s linear infinite;flex-shrink:0;}
+.sbs-lock{font-size:14px;flex-shrink:0;opacity:.6;}
+@keyframes sbsSpin{to{transform:rotate(360deg);}}
+.sbs-body{padding:4px 16px 14px 62px;font-size:14px;line-height:1.6;}
+.sbs-body-doing{display:flex;align-items:center;gap:10px;color:var(--mute);}
+.sbs-body-result{color:var(--ink);font-weight:500;animation:atSlide .3s ease;}
+.sbs-aha{text-align:center;font-size:16px;font-weight:700;color:var(--ink);padding:18px 20px;background:rgba(255,122,89,.08);border-radius:14px;border:1.5px solid rgba(255,122,89,.3);animation:atSlide .4s ease;}
+
 /* ───────────────────────── journey map v2 ───────────────────────── */
 .jmap{padding:40px 0 60px;max-width:720px;margin:0 auto;}
 .jmap-head{text-align:center;margin-bottom:44px;}

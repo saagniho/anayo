@@ -14,6 +14,7 @@ import { PayingAttentionToy } from "./toys/paying-attention";
 import { TheArtOfAskingToy } from "./toys/the-art-of-asking";
 import { ShowDontTellToy } from "./toys/show-dont-tell";
 import { FromTalkingToDoingToy } from "./toys/from-talking-to-doing";
+import { StepByStepToy } from "./toys/step-by-step";
 
 /** Slug → interactive toy. Adding a playable lesson = add one entry here. */
 const TOYS: Record<string, ComponentType<ToyProps>> = {
@@ -25,6 +26,7 @@ const TOYS: Record<string, ComponentType<ToyProps>> = {
   "the-art-of-asking": TheArtOfAskingToy,
   "show-dont-tell": ShowDontTellToy,
   "from-talking-to-doing": FromTalkingToDoingToy,
+  "step-by-step": StepByStepToy,
 };
 
 type Phase = "hook" | "play" | "aha" | "done";
