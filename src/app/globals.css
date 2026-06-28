@@ -268,34 +268,50 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .pred-aha p{color:var(--mute);font-size:15px;line-height:1.65;max-width:500px;margin:0 auto 22px;}
 
 /* ───────────────────────── agent toy (lesson 8) ───────────────────────── */
-.agent-toy{display:flex;flex-direction:column;gap:18px;max-width:480px;margin:0 auto;padding:4px;}
-.agent-mission{background:rgba(255,122,89,.1);border:1.5px solid rgba(255,122,89,.35);border-radius:12px;padding:12px 16px;display:flex;flex-direction:column;gap:5px;}
-.agent-mission-tag{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#ff7a59;}
-.agent-mission-text{font-size:14px;font-weight:600;color:var(--ink);font-style:italic;line-height:1.4;}
-.agent-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.agent-slot{border:2px dashed var(--glass-brd);border-radius:12px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;min-height:88px;justify-content:center;transition:border-color .25s,background .25s;}
-.agent-slot.filled{border-style:solid;border-color:#ff7a59;background:rgba(255,122,89,.07);}
-.agent-slot-tag{font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--mute2);}
-.agent-slot-icon{font-size:24px;line-height:1;}
-.agent-slot-name{font-size:11px;font-weight:700;color:var(--ink);}
-.agent-slot-empty{font-size:11px;color:var(--mute2);font-style:italic;}
-.agent-hint{text-align:center;font-size:13px;color:var(--mute);font-weight:500;}
-.agent-tray{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.agent-card{border:1.5px solid var(--glass-brd);border-radius:12px;background:var(--glass);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;cursor:pointer;transition:all .2s;position:relative;}
-.agent-card:hover:not(.placed){border-color:#ff7a59;transform:translateY(-2px);box-shadow:0 4px 16px rgba(255,122,89,.25);}
-.agent-card.placed{opacity:.4;cursor:default;}
-.agent-card-icon{font-size:28px;line-height:1;}
-.agent-card-name{font-size:12px;font-weight:700;color:var(--ink);}
-.agent-card-desc{font-size:10px;color:var(--mute);line-height:1.4;}
-.agent-placed-check{position:absolute;top:6px;right:8px;font-size:12px;color:var(--green);font-weight:900;}
-.agent-launch{width:100%;max-width:240px;align-self:center;animation:jmlPop 2s ease-in-out infinite;}
-.agent-trace{display:flex;flex-direction:column;gap:10px;}
-.trace-step{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;background:var(--glass);border:1.5px solid var(--glass-brd);animation:traceIn .3s ease;}
-.trace-step.ts-active{border-color:#ff7a59;background:rgba(255,122,89,.07);}
-.trace-step.ts-done{border-color:var(--green);background:rgba(52,211,153,.1);}
-.ts-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
-.ts-text{font-size:13px;color:var(--ink);line-height:1.5;}
-@keyframes traceIn{from{opacity:0;transform:translateX(-10px);}to{opacity:1;transform:none;}}
+.at-wrap{display:flex;flex-direction:column;gap:22px;max-width:520px;margin:0 auto;}
+
+/* task card */
+.at-task{background:rgba(255,122,89,.1);border:2px solid rgba(255,122,89,.4);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;}
+.at-task-from{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#ff7a59;}
+.at-task-q{font-size:16px;font-weight:600;color:var(--ink);line-height:1.5;}
+
+/* intro phase */
+.at-intro{display:flex;flex-direction:column;gap:20px;}
+.at-robot-row{display:flex;align-items:flex-start;gap:16px;}
+.at-robot{font-size:52px;flex-shrink:0;line-height:1;}
+.at-bubble{background:var(--glass);border:1.5px solid var(--glass-brd);border-radius:16px;border-top-left-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;}
+.at-bubble p{font-size:16px;color:var(--ink);line-height:1.55;margin:0;}
+.at-bubble-sub{font-size:13px !important;color:var(--mute) !important;}
+.at-cta{align-self:center;width:100%;max-width:300px;}
+
+/* tools phase */
+.at-tools-phase{display:flex;flex-direction:column;gap:18px;}
+.at-tools-label{font-size:16px;font-weight:600;color:var(--ink);text-align:center;}
+.at-tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.at-tool{border:2.5px solid var(--glass-brd);border-radius:16px;background:var(--glass);padding:20px 12px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all .22s;position:relative;text-align:center;}
+.at-tool:hover:not([disabled]){border-color:#ff7a59;transform:translateY(-3px);box-shadow:0 6px 22px rgba(255,122,89,.3);}
+.at-tool-on{border-color:#ff7a59 !important;background:rgba(255,122,89,.1) !important;cursor:default;transform:none !important;}
+.at-tool-icon{font-size:36px;line-height:1;}
+.at-tool-name{font-size:14px;font-weight:700;color:var(--ink);}
+.at-tool-what{font-size:11px;color:var(--mute);line-height:1.4;}
+.at-tool-check{position:absolute;top:8px;right:10px;font-size:14px;color:var(--green);font-weight:900;}
+.at-go{align-self:center;width:100%;max-width:280px;animation:jmlPop 2s ease-in-out infinite;}
+
+/* run + result phase */
+.at-run{display:flex;flex-direction:column;gap:16px;}
+.at-run-header{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--mute);}
+.at-run-dot{width:10px;height:10px;border-radius:50%;background:var(--green);flex-shrink:0;}
+.at-run-dot.pulsing{animation:jmlRing 1.4s ease-in-out infinite;}
+.at-steps{display:flex;flex-direction:column;gap:10px;}
+.at-step{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:var(--glass);border:1.5px solid var(--glass-brd);animation:atSlide .35s ease;}
+.at-step-live{border-color:#ff7a59;background:rgba(255,122,89,.07);}
+.at-step-icon{font-size:22px;flex-shrink:0;}
+.at-step-text{font-size:15px;color:var(--ink);line-height:1.45;font-weight:500;}
+.at-result{border:2px solid var(--green);border-radius:16px;background:rgba(52,211,153,.08);padding:20px;display:flex;flex-direction:column;gap:10px;animation:atSlide .4s ease;}
+.at-result-title{font-size:12px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--green);}
+.at-result-body{font-size:17px;color:var(--ink);line-height:1.6;}
+.at-result-footer{font-size:13px;color:var(--mute);padding-top:8px;border-top:1px solid var(--glass-brd);line-height:1.5;}
+@keyframes atSlide{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 
 /* ───────────────────────── journey map v2 ───────────────────────── */
 .jmap{padding:40px 0 60px;max-width:720px;margin:0 auto;}
