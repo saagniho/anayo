@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMode } from "@/lib/mode/mode-context";
 import { AnayoBuddy } from "@/components/anayo-buddy";
 import type { LessonMeta, ToyProps } from "@/lib/lessons/types";
+import { markComplete } from "@/lib/progress";
 import { WhatIsAiToy } from "./toys/what-is-ai";
 import { WordsIntoNumbersToy } from "./toys/words-into-numbers";
 import { PredictNextWordToy } from "./toys/predict-next-word";
@@ -110,6 +111,7 @@ export function LessonPlayer({ lesson }: { worldSlug: string; lesson: LessonMeta
           <Toy
             mode={mode}
             onComplete={() => {
+              markComplete(lesson.slug);
               setBurst((b) => b + 1);
               setPhase("aha");
             }}
