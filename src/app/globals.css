@@ -180,15 +180,34 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .hint{text-align:center;color:var(--amber);font-weight:600;font-size:13.5px;margin:0 0 12px;animation:fadeUp .3s ease both;}
 
 /* ───────────────────────── tokenizer toy ───────────────────────── */
-.tok-input{width:100%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.18);border-radius:12px;color:#fff;font-size:1.05rem;padding:.75rem 1rem;resize:none;outline:none;font-family:var(--body);transition:border-color .2s;margin-bottom:18px;}
-.tok-input:focus{border-color:var(--violet);}
-.tok-input::placeholder{color:rgba(255,255,255,.35);}
+.tok-label{text-align:center;font-family:var(--display);font-weight:700;font-size:14px;color:var(--violet-2);letter-spacing:.04em;margin:0 0 6px;}
+.tok-input{width:100%;background:rgba(139,92,255,.1);border:2px solid rgba(139,92,255,.45);border-radius:14px;color:#fff;font-size:1.15rem;padding:1rem 1.1rem;resize:none;outline:none;font-family:var(--body);transition:border-color .2s,box-shadow .2s;margin-bottom:18px;text-align:center;line-height:1.5;}
+.tok-input:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(139,92,255,.2),0 0 28px rgba(139,92,255,.18);}
+.tok-input::placeholder{color:rgba(255,255,255,.4);}
+.tok-input.empty{animation:tokPulse 2.2s ease-in-out infinite;}
+@keyframes tokPulse{0%,100%{border-color:rgba(139,92,255,.4);box-shadow:0 0 0 0 rgba(139,92,255,.15)}50%{border-color:rgba(139,92,255,.9);box-shadow:0 0 0 5px rgba(139,92,255,.12),0 0 24px rgba(139,92,255,.2)}}
 .tok-field{display:flex;flex-wrap:wrap;gap:.6rem;padding:.4rem 0 14px;justify-content:center;}
 .tok-chip{display:flex;flex-direction:column;align-items:center;gap:.3rem;animation:chipIn .18s ease both;}
 @keyframes chipIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 .tok-word{background:var(--chip-c,var(--violet));color:#fff;padding:.3rem .7rem;border-radius:9px;font-size:1rem;font-weight:700;font-family:var(--display);letter-spacing:.02em;box-shadow:0 4px 12px rgba(0,0,0,.25);}
 .tok-id{font-size:.75rem;font-weight:700;color:var(--chip-c,var(--violet));font-family:monospace;animation:numPop .25s cubic-bezier(.34,1.56,.64,1) both;}
 @keyframes numPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+
+/* ───────────────────────── predict-next-word toy ───────────────────────── */
+.pred-story{background:rgba(255,255,255,.04);border:1px solid var(--glass-brd);border-radius:16px;padding:26px 22px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center;}
+.pred-sentence{font-family:var(--display);font-size:1.3rem;font-weight:600;line-height:1.65;text-align:center;margin:0;color:var(--ink);}
+.pred-blank{display:inline-block;min-width:72px;border-bottom:3px solid var(--violet);color:var(--violet-2);font-weight:700;padding:0 4px;text-align:center;animation:blankPulse 1.3s ease-in-out infinite;}
+.pred-blank.filling{color:#fff;border-bottom-color:var(--cyan);animation:none;}
+@keyframes blankPulse{0%,100%{opacity:1}50%{opacity:.35}}
+.pred-word{color:var(--cyan);font-weight:700;background:rgba(39,224,240,.12);border-radius:6px;padding:1px 7px;}
+.pred-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px;}
+.pred-chip{font-family:var(--display);font-weight:600;font-size:16px;padding:16px 14px;border-radius:14px;border:1.5px solid var(--glass-brd);background:var(--glass);color:var(--ink);cursor:pointer;transition:.18s;display:flex;gap:8px;align-items:center;justify-content:center;}
+.pred-chip:hover:not(:disabled){background:rgba(255,255,255,.1);border-color:var(--violet-2);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.25);}
+.pred-chip.picked{background:linear-gradient(135deg,var(--violet),#6d3bff);border-color:var(--violet-2);color:#fff;box-shadow:0 6px 22px rgba(109,59,255,.45);}
+.pred-chip:disabled{opacity:.55;cursor:not-allowed;transform:none;}
+.chip-em{font-size:18px;line-height:1;}
+.pred-aha{text-align:center;padding:14px 0 4px;animation:fadeUp .4s ease both;}
+.pred-aha p{color:var(--mute);font-size:15px;line-height:1.65;max-width:500px;margin:0 auto 22px;}
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}

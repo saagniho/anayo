@@ -64,7 +64,13 @@ export const WORLDS: World[] = [
         concept: "Generative AI = repeatedly predicting the most likely next word.",
         hook: "Can you think like an AI?",
         ability: { id: "guess", label: "GUESS", icon: "🔮" },
-        live: false,
+        aha: {
+          explorer:
+            "You just thought like me! I pick one word at a time, always asking 'what word fits best here?' I do this thousands of times to write a story, answer a question, or even write code. There's no plan — just one word, then another. 🔮",
+          curious:
+            "That's autoregressive generation. At each step the model computes P(next token | all previous tokens) over a vocabulary of ~50k tokens and samples from it. The full sequence emerges token by token — no global plan, only next-token prediction iterated to completion.",
+        },
+        live: true,
       },
       {
         id: "l2-2",

@@ -7,11 +7,13 @@ import { AnayoBuddy } from "@/components/anayo-buddy";
 import type { LessonMeta, ToyProps } from "@/lib/lessons/types";
 import { WhatIsAiToy } from "./toys/what-is-ai";
 import { WordsIntoNumbersToy } from "./toys/words-into-numbers";
+import { PredictNextWordToy } from "./toys/predict-next-word";
 
 /** Slug → interactive toy. Adding a playable lesson = add one entry here. */
 const TOYS: Record<string, ComponentType<ToyProps>> = {
   "what-is-ai": WhatIsAiToy,
   "words-into-numbers": WordsIntoNumbersToy,
+  "predict-the-next-word": PredictNextWordToy,
 };
 
 type Phase = "hook" | "play" | "aha" | "done";
