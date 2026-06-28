@@ -28,6 +28,16 @@ export default function JourneyPage() {
                 <div className="meta">
                   <h3>{w.title}</h3>
                   <p>{w.tagline}</p>
+                  {i === 0 ? (
+                    <Link
+                      href={`/learn/${w.slug}/${w.lessons[0].slug}`}
+                      className="start-badge"
+                    >
+                      ▶ Start here
+                    </Link>
+                  ) : (
+                    <span className="badge">🔒 Locked</span>
+                  )}
                   <div className="lesson-list">
                     {w.lessons.map((l) =>
                       l.live ? (
@@ -45,9 +55,6 @@ export default function JourneyPage() {
                       ),
                     )}
                   </div>
-                  <span className="badge">
-                    {i === 0 ? "● Start here" : "🔒 Locked"}
-                  </span>
                 </div>
               </div>
             ))}
