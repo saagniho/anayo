@@ -90,12 +90,13 @@ export function JourneyMap({ worlds }: { worlds: World[] }) {
                           className="jml-node"
                           style={isNext ? { borderColor: w.color, boxShadow: `0 0 18px ${w.color}88` } : undefined}
                         >
-                          {isDone ? "✓" : n}
+                          <span className="jml-ability">{l.ability.icon}</span>
+                          {isDone && <span className="jml-check">✓</span>}
                           {isNext && (
                             <span className="jml-pulse" style={{ background: w.color }} />
                           )}
                         </div>
-                        <span className="jml-ability">{l.ability.icon}</span>
+                        <span className="jml-num">{isDone ? "" : n}</span>
                         <span className="jml-name">{l.title}</span>
                         {isNext && <span className="jml-nextlabel">▶ Next</span>}
                       </>
