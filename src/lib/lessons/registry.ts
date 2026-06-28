@@ -135,7 +135,13 @@ export const WORLDS: World[] = [
         concept: "Examples and context (few-shot) make answers much better.",
         hook: "Teach by example and watch quality jump.",
         ability: { id: "context", label: "CONTEXT", icon: "🗂️" },
-        live: false,
+        aha: {
+          explorer:
+            "You didn't change me or retrain me — you just showed me examples! That's the secret move of expert AI users. A few good examples beat a long description every single time. 🗂️",
+          curious:
+            "Few-shot prompting is in-context learning: the model infers the task's pattern and output distribution from the demonstrations without any gradient updates. It's one of the most powerful and underused techniques in prompt engineering.",
+        },
+        live: true,
       },
     ],
   },

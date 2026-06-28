@@ -11,6 +11,7 @@ import { PredictNextWordToy } from "./toys/predict-next-word";
 import { TheBigBrainToy } from "./toys/the-big-brain";
 import { PayingAttentionToy } from "./toys/paying-attention";
 import { TheArtOfAskingToy } from "./toys/the-art-of-asking";
+import { ShowDontTellToy } from "./toys/show-dont-tell";
 
 /** Slug → interactive toy. Adding a playable lesson = add one entry here. */
 const TOYS: Record<string, ComponentType<ToyProps>> = {
@@ -20,6 +21,7 @@ const TOYS: Record<string, ComponentType<ToyProps>> = {
   "the-big-brain": TheBigBrainToy,
   "paying-attention": PayingAttentionToy,
   "the-art-of-asking": TheArtOfAskingToy,
+  "show-dont-tell": ShowDontTellToy,
 };
 
 type Phase = "hook" | "play" | "aha" | "done";

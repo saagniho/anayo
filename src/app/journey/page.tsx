@@ -5,6 +5,11 @@ import { WORLDS } from "@/lib/lessons/registry";
 export const metadata = { title: "The Journey — Anayo" };
 
 export default function JourneyPage() {
+  // Global lesson numbers across all worlds
+  let num = 0;
+  const lessonNums = new Map<string, number>();
+  for (const w of WORLDS) for (const l of w.lessons) lessonNums.set(l.id, ++num);
+
   return (
     <>
       <SiteHeader />
@@ -46,11 +51,11 @@ export default function JourneyPage() {
                           href={`/learn/${w.slug}/${l.slug}`}
                           className="lchip live"
                         >
-                          ▶ {l.ability.icon} {l.title}
+                          ▶ {lessonNums.get(l.id)}. {l.ability.icon} {l.title}
                         </Link>
                       ) : (
                         <span key={l.id} className="lchip">
-                          {l.ability.icon} {l.title}
+                          {lessonNums.get(l.id)}. {l.ability.icon} {l.title}
                         </span>
                       ),
                     )}
