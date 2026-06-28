@@ -9,6 +9,7 @@ import { WhatIsAiToy } from "./toys/what-is-ai";
 import { WordsIntoNumbersToy } from "./toys/words-into-numbers";
 import { PredictNextWordToy } from "./toys/predict-next-word";
 import { TheBigBrainToy } from "./toys/the-big-brain";
+import { PayingAttentionToy } from "./toys/paying-attention";
 
 /** Slug → interactive toy. Adding a playable lesson = add one entry here. */
 const TOYS: Record<string, ComponentType<ToyProps>> = {
@@ -16,6 +17,7 @@ const TOYS: Record<string, ComponentType<ToyProps>> = {
   "words-into-numbers": WordsIntoNumbersToy,
   "predict-the-next-word": PredictNextWordToy,
   "the-big-brain": TheBigBrainToy,
+  "paying-attention": PayingAttentionToy,
 };
 
 type Phase = "hook" | "play" | "aha" | "done";

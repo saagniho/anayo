@@ -94,7 +94,13 @@ export const WORLDS: World[] = [
         concept: "Transformers weigh which words matter to each other (attention).",
         hook: "Which words is the AI really looking at?",
         ability: { id: "focus", label: "FOCUS", icon: "🎯" },
-        live: false,
+        aha: {
+          explorer:
+            "Did you see how 'it' lit up 'car' and not 'robot'? I figured that out just by paying attention to the whole sentence at once — no dictionary, no grammar book. That's what makes transformers so powerful. 🎯",
+          curious:
+            "Attention is the breakthrough at the heart of every modern LLM. By computing pairwise relevance scores across all token positions simultaneously, the transformer resolves coreference, long-range dependencies, and syntactic roles in a single differentiable operation — something RNNs couldn't do efficiently.",
+        },
+        live: true,
       },
     ],
   },
