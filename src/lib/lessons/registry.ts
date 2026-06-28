@@ -120,7 +120,13 @@ export const WORLDS: World[] = [
         concept: "Clear instructions and context steer the model (prompting).",
         hook: "Why do vague questions get vague answers?",
         ability: { id: "ask", label: "ASK", icon: "💬" },
-        live: false,
+        aha: {
+          explorer:
+            "Did you see how each ingredient made the answer better? You didn't change Anayo at all — you just told it more. That's the superpower of a good prompt: same AI, completely different results. 💬",
+          curious:
+            "Prompt engineering is constraint specification: every token you add narrows the conditional distribution P(output | prompt). Task, recipient, style, and context are the four axes that move an LLM from high-entropy generic output to precise, high-value generation.",
+        },
+        live: true,
       },
       {
         id: "l3-2",
