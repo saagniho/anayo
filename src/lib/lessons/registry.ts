@@ -79,7 +79,13 @@ export const WORLDS: World[] = [
         concept: "An LLM is 'large' because it learned from oceans of text.",
         hook: "What makes a language model so big?",
         ability: { id: "imagine", label: "IMAGINE", icon: "✨" },
-        live: false,
+        aha: {
+          explorer:
+            "I didn't start out smart — I just read more than any human ever could! Books, websites, code, conversations, Wikipedia — all of it went into my brain. That's what makes me 'large.' Not size. Reading. ✨",
+          curious:
+            "Training corpus scale is the primary differentiator between LLMs. GPT-3 trained on ~300B tokens; GPT-4 on an estimated 1T+. Scale drives emergent capabilities — behaviours that appear suddenly past certain data and parameter thresholds, not by design but by sheer statistical breadth.",
+        },
+        live: true,
       },
       {
         id: "l2-3",

@@ -193,6 +193,21 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .tok-id{font-size:.75rem;font-weight:700;color:var(--chip-c,var(--violet));font-family:monospace;animation:numPop .25s cubic-bezier(.34,1.56,.64,1) both;}
 @keyframes numPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
 
+/* ───────────────────────── big-brain toy ───────────────────────── */
+.brain-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;margin:18px 0 10px;}
+.brain-orb{width:148px;height:148px;border-radius:50%;border:3px solid rgba(139,92,255,.6);overflow:hidden;position:relative;background:rgba(139,92,255,.06);box-shadow:0 0 28px rgba(139,92,255,.2);transition:box-shadow .6s,border-color .6s;}
+.brain-orb.full{border-color:var(--cyan);box-shadow:0 0 60px rgba(139,92,255,.6),0 0 100px rgba(39,224,240,.25);animation:brainGlow 2.2s ease-in-out infinite;}
+@keyframes brainGlow{50%{box-shadow:0 0 80px rgba(139,92,255,.85),0 0 130px rgba(39,224,240,.4);}}
+.brain-fill{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,#5c1fff,var(--violet),rgba(139,92,255,.55));transition:height .65s cubic-bezier(.5,1.4,.5,1);}
+.brain-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:2.1rem;color:#fff;z-index:2;text-shadow:0 2px 10px rgba(0,0,0,.6);}
+.brain-fact{text-align:center;color:var(--cyan);font-weight:600;font-size:14px;max-width:340px;line-height:1.5;min-height:42px;animation:fadeUp .3s ease both;}
+.brain-sources{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:6px 0 4px;}
+.brain-src{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;border:1.5px solid var(--glass-brd);background:var(--glass);color:var(--ink);cursor:pointer;transition:.18s;font-family:var(--display);font-weight:600;font-size:15px;}
+.brain-src:hover:not(:disabled){background:rgba(255,255,255,.1);border-color:var(--violet-2);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.2);}
+.brain-src.fed{opacity:.45;cursor:default;border-color:rgba(52,211,153,.35);transform:none !important;}
+.src-em{font-size:20px;line-height:1;}
+.src-check{font-size:13px;}
+
 /* ───────────────────────── predict-next-word toy ───────────────────────── */
 .pred-story{background:rgba(255,255,255,.04);border:1px solid var(--glass-brd);border-radius:16px;padding:26px 22px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center;}
 .pred-sentence{font-family:var(--display);font-size:1.3rem;font-weight:600;line-height:1.65;text-align:center;margin:0;color:var(--ink);}

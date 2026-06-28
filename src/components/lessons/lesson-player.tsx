@@ -8,12 +8,14 @@ import type { LessonMeta, ToyProps } from "@/lib/lessons/types";
 import { WhatIsAiToy } from "./toys/what-is-ai";
 import { WordsIntoNumbersToy } from "./toys/words-into-numbers";
 import { PredictNextWordToy } from "./toys/predict-next-word";
+import { TheBigBrainToy } from "./toys/the-big-brain";
 
 /** Slug → interactive toy. Adding a playable lesson = add one entry here. */
 const TOYS: Record<string, ComponentType<ToyProps>> = {
   "what-is-ai": WhatIsAiToy,
   "words-into-numbers": WordsIntoNumbersToy,
   "predict-the-next-word": PredictNextWordToy,
+  "the-big-brain": TheBigBrainToy,
 };
 
 type Phase = "hook" | "play" | "aha" | "done";
