@@ -6,6 +6,18 @@ import type { ToyProps } from "@/lib/lessons/types";
 const WORDS = ["The", "robot", "fixed", "the", "car", "because", "it", "was", "broken"];
 const IT_IDX = 6; // "it" — the pivot word
 
+const WORD_COLORS = [
+  "#8b5cff", // The
+  "#ff7a59", // robot
+  "#27e0f0", // fixed
+  "#34d399", // the
+  "#ffb84d", // car
+  "#60a5fa", // because
+  "#ff5db1", // it
+  "#a98bff", // was
+  "#f59e0b", // broken
+];
+
 // Pre-baked attention weights [from][to] — designed to show clear, meaningful patterns
 const ATTENTION: number[][] = [
 //    The  robot  fixed   the   car  because   it   was  broken
@@ -56,10 +68,10 @@ export function PayingAttentionToy({ mode, onComplete }: ToyProps) {
     canComplete
       ? "✨ You've got the idea — hit Continue whenever you're ready."
       : explored.size >= 1 && !explored.has(IT_IDX)
-        ? `💡 Try clicking "it" — most interesting pattern! (${explored.size}/3 explored)`
+        ? `💡 Try clicking "it" in the sentence — most interesting pattern! (${explored.size}/3 explored)`
         : focused === null
-          ? "Click any word to see which others Anayo focuses on ↓"
-          : `${explored.size}/3 words explored — keep clicking!`;
+          ? "👆 Click on any of the coloured words in the sentence below"
+          : `${explored.size}/3 words explored — keep clicking words in the sentence!`;
 
   return (
     <div className="toy">
@@ -81,7 +93,12 @@ export function PayingAttentionToy({ mode, onComplete }: ToyProps) {
             <button
               key={i}
               className={`attn-chip${isFocused ? " focused" : ""}${isBright ? " bright" : ""}`}
-              style={weight !== null && !isFocused ? { opacity: Math.max(0.18, weight) } : undefined}
+              style={{
+                "--word-c": WORD_COLORS[i],
+                ...(weight !== null && !isFocused
+                  ? { opacity: isBright ? 1 : Math.max(0.18, weight) }
+                  : {}),
+              } as React.CSSProperties}
               onClick={() => focus(i)}
             >
               {w}

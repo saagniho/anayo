@@ -211,7 +211,13 @@ export const WORLDS: World[] = [
         concept: "Claude Code is an agent + harness + tools that edits and runs real code.",
         hook: "Watch an AI plan, write and fix Python.",
         ability: { id: "code", label: "CODE", icon: "💻" },
-        live: false,
+        aha: {
+          explorer:
+            "Anayo didn't just type code randomly — it made a plan first, then wrote each line carefully, then tested it! That's exactly how coding agents work. Plan → write → run → check. Same as you'd build a LEGO set: read the instructions first! 💻",
+          curious:
+            "Claude Code runs a tight loop: it reads the codebase, plans a diff, applies the edit, runs tests or the REPL, reads the output, and iterates. It's the same ReAct pattern — observe, reason, act — but grounded in compiler and runtime feedback rather than search results.",
+        },
+        live: true,
       },
       {
         id: "l5-2",
@@ -220,7 +226,13 @@ export const WORLDS: World[] = [
         concept: "Put it all together — you and Anayo ship a tiny project.",
         hook: "Your graduation: build a real thing.",
         ability: { id: "graduate", label: "GRAD", icon: "🎓" },
-        live: false,
+        aha: {
+          explorer:
+            "You just designed a real AI app! And you understood every piece of it — the brain that sees patterns, the words it reads, the attention it pays, the prompts it needs, and the tools that let it act. You didn't just learn about AI. You understand it. 🎓",
+          curious:
+            "Every production AI product is this: a model (reasoning), tools (I/O and APIs), a harness (orchestration loop), a system prompt (context and constraints), and a feedback signal. You've now seen all five layers. That's the complete stack.",
+        },
+        live: true,
       },
     ],
   },

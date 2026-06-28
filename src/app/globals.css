@@ -340,6 +340,70 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .sbs-body-result{color:var(--ink);font-weight:500;animation:atSlide .3s ease;}
 .sbs-aha{text-align:center;font-size:16px;font-weight:700;color:var(--ink);padding:18px 20px;background:rgba(255,122,89,.08);border-radius:14px;border:1.5px solid rgba(255,122,89,.3);animation:atSlide .4s ease;}
 
+/* ───────────────────────── coding-with-ai toy (lesson 10) ───────────────────────── */
+.cwa-wrap{display:flex;flex-direction:column;gap:20px;max-width:520px;margin:0 auto;}
+.cwa-intro{display:flex;align-items:center;gap:14px;}
+.cwa-bot{font-size:44px;flex-shrink:0;}
+.cwa-intro-bubble{background:var(--glass);border:1.5px solid var(--glass-brd);border-radius:16px;border-top-left-radius:4px;padding:14px 16px;font-size:15px;color:var(--ink);line-height:1.5;font-weight:500;}
+.cwa-project-list{display:flex;flex-direction:column;gap:10px;}
+.cwa-project-btn{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;border:1.5px solid var(--glass-brd);background:var(--glass);cursor:pointer;transition:all .2s;text-align:left;}
+.cwa-project-btn:hover{border-color:var(--amber);transform:translateX(4px);box-shadow:0 4px 16px rgba(255,184,77,.2);}
+.cwa-proj-icon{font-size:32px;flex-shrink:0;}
+.cwa-proj-info{display:flex;flex-direction:column;gap:3px;flex:1;}
+.cwa-proj-name{font-size:15px;font-weight:700;color:var(--ink);}
+.cwa-proj-desc{font-size:12px;color:var(--mute);}
+.cwa-proj-arrow{font-size:18px;color:var(--mute2);}
+.cwa-workspace{display:flex;flex-direction:column;gap:14px;}
+.cwa-ws-head{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,184,77,.1);border:1.5px solid rgba(255,184,77,.35);border-radius:12px;}
+.cwa-ws-icon{font-size:24px;}
+.cwa-ws-name{font-size:15px;font-weight:700;color:var(--ink);}
+.cwa-phases{display:flex;gap:6px;flex-wrap:wrap;}
+.cwa-phase{font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1.5px solid var(--glass-brd);color:var(--mute2);background:var(--glass);transition:all .25s;}
+.cwa-phase.cwa-phase-on{border-color:var(--amber);color:var(--amber);background:rgba(255,184,77,.1);}
+.cwa-block{border-radius:12px;border:1.5px solid var(--glass-brd);background:var(--glass);overflow:hidden;}
+.cwa-block-head{padding:10px 14px;font-size:12px;font-weight:800;color:var(--mute);letter-spacing:.04em;border-bottom:1px solid var(--glass-brd);}
+.cwa-plan{padding:12px 14px;display:flex;flex-direction:column;gap:8px;}
+.cwa-plan-row{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--ink);line-height:1.4;animation:atSlide .3s ease;}
+.cwa-plan-tick{color:var(--green);font-weight:900;flex-shrink:0;margin-top:1px;}
+.cwa-code{padding:14px;font-family:monospace;font-size:13px;line-height:1.7;color:#a8e6cf;background:#0d1117;display:flex;flex-direction:column;}
+.cwa-code-line{animation:atSlide .2s ease;white-space:pre;}
+.cwa-cursor{color:var(--amber);animation:blink .7s step-end infinite;}
+@keyframes blink{50%{opacity:0;}}
+.cwa-terminal{padding:12px 14px;font-family:monospace;font-size:13px;background:#0d1117;display:flex;flex-direction:column;gap:4px;min-height:52px;}
+.cwa-output-line{color:#7ee787;line-height:1.6;animation:atSlide .3s ease;}
+.cwa-output-check{color:var(--green);font-size:12px;font-weight:700;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.06);}
+.cwa-success{text-align:center;font-size:16px;font-weight:700;color:var(--ink);padding:16px 20px;background:rgba(255,184,77,.08);border-radius:14px;border:1.5px solid rgba(255,184,77,.3);animation:atSlide .4s ease;}
+
+/* ───────────────────────── build-something-real toy (lesson 11) ───────────────────────── */
+.bsr-wrap{display:flex;flex-direction:column;gap:20px;max-width:520px;margin:0 auto;}
+.bsr-prompt{text-align:center;display:flex;flex-direction:column;gap:8px;}
+.bsr-prompt-label{font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);}
+.bsr-prompt-q{font-size:18px;font-weight:700;color:var(--ink);margin:0;}
+.bsr-apps{display:flex;flex-direction:column;gap:10px;}
+.bsr-app-btn{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;border:1.5px solid var(--glass-brd);background:var(--glass);cursor:pointer;transition:all .2s;text-align:left;}
+.bsr-app-btn:hover{border-color:var(--amber);transform:translateX(4px);box-shadow:0 4px 18px rgba(255,184,77,.25);}
+.bsr-app-icon{font-size:34px;flex-shrink:0;}
+.bsr-app-info{display:flex;flex-direction:column;gap:3px;flex:1;}
+.bsr-app-name{font-size:15px;font-weight:700;color:var(--ink);}
+.bsr-app-tagline{font-size:12px;color:var(--mute);line-height:1.4;}
+.bsr-building{display:flex;flex-direction:column;gap:16px;align-items:center;}
+.bsr-building-title{font-size:16px;font-weight:700;color:var(--ink);text-align:center;}
+.bsr-build-steps{display:flex;flex-direction:column;gap:8px;width:100%;}
+.bsr-build-step{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;font-size:15px;font-weight:600;animation:atSlide .3s ease;}
+.bsr-build-live{background:rgba(255,184,77,.12);border:1.5px solid rgba(255,184,77,.4);color:var(--ink);}
+.bsr-build-past{background:rgba(52,211,153,.07);border:1.5px solid rgba(52,211,153,.3);color:var(--mute);}
+.bsr-ready{display:flex;flex-direction:column;gap:20px;animation:atSlide .4s ease;}
+.bsr-app-card{border:2px solid var(--amber);border-radius:20px;background:rgba(255,184,77,.07);padding:24px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;}
+.bsr-card-icon{font-size:52px;line-height:1;}
+.bsr-card-name{font-size:22px;font-weight:800;color:var(--ink);}
+.bsr-card-blurb{font-size:15px;color:var(--mute);line-height:1.6;max-width:340px;}
+.bsr-card-badge{font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;background:rgba(255,184,77,.15);border:1px solid rgba(255,184,77,.4);color:var(--amber);}
+.bsr-abilities{display:flex;flex-direction:column;gap:10px;}
+.bsr-abilities-label{font-size:12px;font-weight:700;color:var(--mute);text-align:center;text-transform:uppercase;letter-spacing:.05em;}
+.bsr-abilities-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+.bsr-ab-chip{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--glass);border:1px solid var(--glass-brd);color:var(--ink);}
+.bsr-ship{width:100%;max-width:260px;align-self:center;font-size:18px;animation:jmlPop 2s ease-in-out infinite;}
+
 /* ───────────────────────── journey map v2 ───────────────────────── */
 .jmap{padding:40px 0 60px;max-width:720px;margin:0 auto;}
 .jmap-head{text-align:center;margin-bottom:44px;}

@@ -33,7 +33,7 @@ export function WordsIntoNumbersToy({ mode, onComplete }: ToyProps) {
       ? "Step 3 — press 📨 Feed Anayo to send it your sentence!"
       : hasTokens
         ? "Step 2 — press 👁 Show Numbers to see what Anayo actually reads."
-        : 'Step 1 — type any sentence (try: Anayo loves to learn)';
+        : "Step 1 — type any sentence in the box below ↓ (try: Anayo loves to learn)";
 
   function handleChange(v: string) {
     setText(v);
@@ -57,12 +57,14 @@ export function WordsIntoNumbersToy({ mode, onComplete }: ToyProps) {
 
       {guide && <div className="guide">{guide}</div>}
 
+      {!hasTokens && <p className="tok-label">✏️ Your sentence goes here</p>}
+
       <textarea
-        className="tok-input"
-        placeholder="Type something… e.g. Anayo loves to learn"
+        className={`tok-input${!hasTokens ? " empty" : ""}`}
+        placeholder="e.g. Anayo loves to learn"
         value={text}
         onChange={(e) => handleChange(e.target.value)}
-        rows={2}
+        rows={3}
         maxLength={120}
       />
 
