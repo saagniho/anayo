@@ -161,7 +161,13 @@ export const WORLDS: World[] = [
         concept: "An agent = a model + tools + a goal.",
         hook: "What if the AI could actually do things?",
         ability: { id: "act", label: "ACT", icon: "🦾" },
-        live: false,
+        aha: {
+          explorer:
+            "Did you see the difference? A plain chatbot can only talk. But Anayo-as-agent searched the web, thought it through, and actually WROTE a report. That's what an agent does — it takes real actions in the world. 🦾",
+          curious:
+            "An agent wraps an LLM in a loop: observe → think → act → observe. The model handles reasoning; tools handle side-effects (I/O, APIs, computation). The goal is the stopping condition. This architecture — sometimes called ReAct — is the backbone of every agentic framework: LangChain, CrewAI, and Claude Code itself.",
+        },
+        live: true,
       },
       {
         id: "l4-2",

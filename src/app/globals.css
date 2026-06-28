@@ -267,6 +267,36 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .pred-aha{text-align:center;padding:14px 0 4px;animation:fadeUp .4s ease both;}
 .pred-aha p{color:var(--mute);font-size:15px;line-height:1.65;max-width:500px;margin:0 auto 22px;}
 
+/* ───────────────────────── agent toy (lesson 8) ───────────────────────── */
+.agent-toy{display:flex;flex-direction:column;gap:18px;max-width:480px;margin:0 auto;padding:4px;}
+.agent-mission{background:rgba(255,122,89,.1);border:1.5px solid rgba(255,122,89,.35);border-radius:12px;padding:12px 16px;display:flex;flex-direction:column;gap:5px;}
+.agent-mission-tag{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#ff7a59;}
+.agent-mission-text{font-size:14px;font-weight:600;color:var(--ink);font-style:italic;line-height:1.4;}
+.agent-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.agent-slot{border:2px dashed var(--glass-brd);border-radius:12px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;min-height:88px;justify-content:center;transition:border-color .25s,background .25s;}
+.agent-slot.filled{border-style:solid;border-color:#ff7a59;background:rgba(255,122,89,.07);}
+.agent-slot-tag{font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--mute2);}
+.agent-slot-icon{font-size:24px;line-height:1;}
+.agent-slot-name{font-size:11px;font-weight:700;color:var(--ink);}
+.agent-slot-empty{font-size:11px;color:var(--mute2);font-style:italic;}
+.agent-hint{text-align:center;font-size:13px;color:var(--mute);font-weight:500;}
+.agent-tray{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.agent-card{border:1.5px solid var(--glass-brd);border-radius:12px;background:var(--glass);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;cursor:pointer;transition:all .2s;position:relative;}
+.agent-card:hover:not(.placed){border-color:#ff7a59;transform:translateY(-2px);box-shadow:0 4px 16px rgba(255,122,89,.25);}
+.agent-card.placed{opacity:.4;cursor:default;}
+.agent-card-icon{font-size:28px;line-height:1;}
+.agent-card-name{font-size:12px;font-weight:700;color:var(--ink);}
+.agent-card-desc{font-size:10px;color:var(--mute);line-height:1.4;}
+.agent-placed-check{position:absolute;top:6px;right:8px;font-size:12px;color:var(--green);font-weight:900;}
+.agent-launch{width:100%;max-width:240px;align-self:center;animation:jmlPop 2s ease-in-out infinite;}
+.agent-trace{display:flex;flex-direction:column;gap:10px;}
+.trace-step{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;background:var(--glass);border:1.5px solid var(--glass-brd);animation:traceIn .3s ease;}
+.trace-step.ts-active{border-color:#ff7a59;background:rgba(255,122,89,.07);}
+.trace-step.ts-done{border-color:var(--green);background:rgba(52,211,153,.1);}
+.ts-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.ts-text{font-size:13px;color:var(--ink);line-height:1.5;}
+@keyframes traceIn{from{opacity:0;transform:translateX(-10px);}to{opacity:1;transform:none;}}
+
 /* ───────────────────────── journey map v2 ───────────────────────── */
 .jmap{padding:40px 0 60px;max-width:720px;margin:0 auto;}
 .jmap-head{text-align:center;margin-bottom:44px;}
