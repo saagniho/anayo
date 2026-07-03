@@ -40,7 +40,7 @@ export function JourneyMap({ worlds }: { worlds: World[] }) {
     <div className="jmap">
       <div className="jmap-head">
         <h2>🗺️ Your Journey</h2>
-        <p>Five worlds · {worlds.reduce((a, w) => a + w.lessons.length, 0)} lessons · one AI buddy levelling up with you</p>
+        <p>Five worlds · {worlds.reduce((a, w) => a + w.lessons.filter((l) => l.live).length, 0)} lessons · one AI buddy levelling up with you</p>
       </div>
 
       <div className="jmap-worlds">

@@ -2,7 +2,10 @@
 
 import Link from "next/link";
 import { useMode } from "@/lib/mode/mode-context";
+import { allLessons } from "@/lib/lessons/registry";
 import { AnayoBuddy } from "./anayo-buddy";
+
+const LIVE_COUNT = allLessons().filter(({ lesson }) => lesson.live).length;
 
 const COPY = {
   explorer: {
@@ -54,7 +57,7 @@ export function Hero() {
             <b>5</b> worlds to explore
           </div>
           <div>
-            <b>11</b> hands-on lessons
+            <b>{LIVE_COUNT}</b> hands-on lessons
           </div>
           <div>
             <b>1</b> buddy that&apos;s all yours
