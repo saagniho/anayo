@@ -183,6 +183,11 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .tok-word{background:var(--chip-c,var(--violet));color:#fff;padding:.3rem .7rem;border-radius:9px;font-size:1rem;font-weight:700;font-family:var(--display);letter-spacing:.02em;box-shadow:0 4px 12px rgba(0,0,0,.25);}
 .tok-id{font-size:.75rem;font-weight:700;color:var(--chip-c,var(--violet));font-family:monospace;animation:numPop .25s cubic-bezier(.34,1.56,.64,1) both;}
 @keyframes numPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+.tok-chip.dup .tok-word{box-shadow:0 0 0 2.5px #fff,0 4px 12px rgba(0,0,0,.25);}
+.tok-decode{background:rgba(39,224,240,.08);border:1px solid rgba(39,224,240,.35);border-radius:14px;padding:14px 16px;margin-bottom:12px;text-align:center;}
+.tok-decode-label{font-size:13px;color:var(--mute);font-weight:600;margin:0 0 4px;}
+.tok-stream{font-family:monospace;font-size:1.05rem;font-weight:700;color:#27e0f0;margin-bottom:10px;letter-spacing:.05em;}
+.tok-decoded{font-family:var(--display);font-weight:700;font-size:1.1rem;color:#fff;}
 
 /* ───────────────────────── art-of-asking toy ───────────────────────── */
 .prompt-response{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 10px;}
