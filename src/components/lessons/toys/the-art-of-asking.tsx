@@ -15,7 +15,7 @@ function buildPrompt(added: Set<string>): string {
   let p = "Write a birthday message";
   if (added.has("who"))   p += " for my son Anay, who loves dragons";
   if (added.has("style")) p += ". Make it fun and short";
-  if (added.has("extra")) p += ". He just turned 9";
+  if (added.has("extra")) p += added.has("who") ? ". He just turned 9" : ". The birthday person just turned 9";
   return p + ".";
 }
 
