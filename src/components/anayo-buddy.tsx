@@ -23,7 +23,6 @@ export function AnayoBuddy({
   return (
     <div className="stage">
       <div className="halo" />
-      <div className="b-shadow" />
       <div className="buddy">
         {speech ? <div className="speech">{speech}</div> : null}
         <svg viewBox="0 0 220 240" role="img" aria-label="Anayo the AI buddy">
@@ -55,6 +54,7 @@ export function AnayoBuddy({
             </radialGradient>
           </defs>
         </svg>
+        <div className="b-shadow" />
         <div className="tray">
           {tray.map((a) => (
             <div key={a.label} className={`ab${a.unlocked ? "" : " locked"}`} title={a.label}>

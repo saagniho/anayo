@@ -46,10 +46,7 @@ export function Hero() {
         <p className="sub">{copy.sub}</p>
         <div className="cta-row">
           <Link href="/journey" className="btn primary">
-            ✨ Start building
-          </Link>
-          <Link href="/journey" className="btn ghost">
-            See the journey →
+            ✨ Start your journey
           </Link>
         </div>
         <div className="miniproof">
