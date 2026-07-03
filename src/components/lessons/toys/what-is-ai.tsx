@@ -59,13 +59,23 @@ export function WhatIsAiToy({ mode, onComplete }: ToyProps) {
       setHint("Anayo needs at least one 💜 and one 🚫 example. Follow the step above ☝️");
       return;
     }
-    // Learn a 1-D threshold (a decision boundary) from the labelled examples.
+    // Learn a 1-D decision boundary from the labelled examples — including
+    // which side is "loved". Anayo follows the kid's teaching faithfully,
+    // even when it contradicts the secret rule (garbage in, garbage out).
     const loved = blobs.filter((b) => labels[b.id] === "love").map((b) => b.size);
     const noped = blobs.filter((b) => labels[b.id] === "nope").map((b) => b.size);
-    const threshold = (Math.min(...loved) + Math.max(...noped)) / 2;
+    const avg = (xs: number[]) => xs.reduce((a, x) => a + x, 0) / xs.length;
+    const bigIsLoved = avg(loved) >= avg(noped);
+    const threshold = bigIsLoved
+      ? (Math.min(...loved) + Math.max(...noped)) / 2
+      : (Math.max(...loved) + Math.min(...noped)) / 2;
     const p: Record<number, boolean> = {};
     for (const b of blobs) {
-      p[b.id] = labels[b.id] ? labels[b.id] === "love" : b.size >= threshold;
+      p[b.id] = labels[b.id]
+        ? labels[b.id] === "love"
+        : bigIsLoved
+          ? b.size >= threshold
+          : b.size <= threshold;
     }
     setPreds(p);
   }
@@ -170,7 +180,9 @@ export function WhatIsAiToy({ mode, onComplete }: ToyProps) {
               </button>
             ) : (
               <button className="btn ghost" onClick={reset}>
-                ↻ Mixed-up examples — try again
+                {correct === 0
+                  ? "↻ Anayo learned YOUR rule perfectly — but it wasn't the secret rule! Try again"
+                  : "↻ Mixed-up examples — try again"}
               </button>
             )}
           </div>
