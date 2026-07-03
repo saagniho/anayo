@@ -9,7 +9,14 @@ const PALETTE = [
 ];
 
 function tokenize(text: string): { token: string; id: number }[] {
-  const parts = text.trim().match(/\w+|[^\w\s]/g) ?? [];
+  // Unicode-aware: keeps emoji (incl. skin tones and ZWJ sequences like 👨‍👩‍👧)
+  // as single tokens instead of splitting surrogate pairs into mojibake.
+  const parts =
+    text
+      .trim()
+      .match(
+        /\p{Extended_Pictographic}[\p{Emoji_Modifier}\u{FE0F}]*(?:\u{200D}\p{Extended_Pictographic}[\p{Emoji_Modifier}\u{FE0F}]*)*|\w+|[^\w\s]/gu,
+      ) ?? [];
   const vocab: Record<string, number> = {};
   let next = 1;
   return parts.map((t) => {
