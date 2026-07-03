@@ -108,13 +108,6 @@ export function CodingWithAiToy({ onComplete }: ToyProps) {
     return () => clearTimeout(t);
   }, [phase]);
 
-  // Complete after done renders
-  useEffect(() => {
-    if (phase !== "done") return;
-    const t = setTimeout(onComplete, 2200);
-    return () => clearTimeout(t);
-  }, [phase, onComplete]);
-
   const phaseOrder: Phase[] = ["plan", "code", "run", "done"];
   const phaseLabels = ["📋 Plan", "⌨️ Code", "▶ Run", "✅ Done"];
 
@@ -218,9 +211,16 @@ export function CodingWithAiToy({ onComplete }: ToyProps) {
           )}
 
           {phase === "done" && (
-            <div className="cwa-success">
-              Plan → write → test. That&apos;s exactly how coding agents work! 💻
-            </div>
+            <>
+              <div className="cwa-success">
+                Plan → write → test. That&apos;s exactly how coding agents work! 💻
+              </div>
+              <div className="toy-actions">
+                <button className="btn primary" onClick={onComplete}>
+                  💻 It works! Continue →
+                </button>
+              </div>
+            </>
           )}
         </div>
       )}

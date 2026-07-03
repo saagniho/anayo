@@ -62,13 +62,6 @@ export function StepByStepToy({ onComplete }: ToyProps) {
     return () => clearTimeout(t);
   }, [running]);
 
-  // Fire onComplete shortly after all steps are done
-  useEffect(() => {
-    if (!allDone) return;
-    const t = setTimeout(onComplete, 1800);
-    return () => clearTimeout(t);
-  }, [allDone, onComplete]);
-
   return (
     <div className="sbs-wrap">
       {/* Big goal */}
@@ -140,9 +133,16 @@ export function StepByStepToy({ onComplete }: ToyProps) {
       </div>
 
       {allDone && (
-        <div className="sbs-aha">
-          🧩 Big jobs feel impossible — until you break them into steps!
-        </div>
+        <>
+          <div className="sbs-aha">
+            🧩 Big jobs feel impossible — until you break them into steps!
+          </div>
+          <div className="toy-actions">
+            <button className="btn primary" onClick={onComplete}>
+              🧩 I did it! Continue →
+            </button>
+          </div>
+        </>
       )}
     </div>
   );

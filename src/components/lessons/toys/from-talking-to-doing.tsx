@@ -46,13 +46,6 @@ export function FromTalkingToDoingToy({ onComplete }: ToyProps) {
     return () => clearTimeout(t);
   }, [phase, shownSteps]);
 
-  // Complete after result renders
-  useEffect(() => {
-    if (phase !== "result") return;
-    const t = setTimeout(onComplete, 2400);
-    return () => clearTimeout(t);
-  }, [phase, onComplete]);
-
   const allGiven = given.size === TOOLS.length;
 
   return (
@@ -145,6 +138,11 @@ export function FromTalkingToDoingToy({ onComplete }: ToyProps) {
               </div>
               <div className="at-result-footer">
                 A chatbot says &ldquo;I don&apos;t know.&rdquo; An <strong>agent</strong> finds the answer. 🦾
+              </div>
+              <div className="toy-actions">
+                <button className="btn primary" onClick={onComplete}>
+                  🦾 Amazing! Continue →
+                </button>
               </div>
             </div>
           )}

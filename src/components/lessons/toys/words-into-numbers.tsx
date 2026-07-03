@@ -50,7 +50,6 @@ export function WordsIntoNumbersToy({ mode, onComplete }: ToyProps) {
 
   function feed() {
     setFed(true);
-    setTimeout(onComplete, 1800);
   }
 
   return (
@@ -105,9 +104,16 @@ export function WordsIntoNumbersToy({ mode, onComplete }: ToyProps) {
       )}
 
       {fed && (
-        <p className="taught">
-          ✅ Anayo received <b>{tokens.length}</b> token{tokens.length !== 1 ? "s" : ""} — it&apos;s doing math with your words right now! 🧠
-        </p>
+        <>
+          <p className="taught">
+            ✅ Anayo received <b>{tokens.length}</b> token{tokens.length !== 1 ? "s" : ""} — it&apos;s doing math with your words right now! 🧠
+          </p>
+          <div className="toy-actions">
+            <button className="btn primary" onClick={onComplete}>
+              ✨ Cool! Continue →
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
