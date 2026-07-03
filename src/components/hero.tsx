@@ -11,13 +11,13 @@ const COPY = {
   explorer: {
     h: (
       <>
-        Don&apos;t just <span className="grad">use</span> AI.
+        Your <span className="grad">quest</span>:
         <br />
-        Build your own <span className="grad">AI buddy.</span>
+        build your own <span className="grad">AI buddy!</span>
       </>
     ),
-    sub: "Every big AI idea — tokens, transformers, agents — becomes a real superpower you unlock for a little buddy you create. Learn by playing. Watch it come alive.",
-    speech: "Hi, I'm Anayo! Teach me? 👋",
+    sub: "Anayo the robot needs YOU. Travel through 5 worlds, crack the secrets of how AI really thinks, and teach your buddy to read, guess, focus and code — one superpower at a time.",
+    speech: "Hi, I'm Anayo! Ready for our quest? 🚀",
   },
   curious: {
     h: (
@@ -40,13 +40,13 @@ export function Hero() {
     <section className="hero">
       <div>
         <span className="kicker">
-          <span className="ping" /> For curious humans, age 8 to 88
+          <span className="ping" /> A quest for curious humans, age 8 to 88
         </span>
         <h1 className="hero-h">{copy.h}</h1>
         <p className="sub">{copy.sub}</p>
         <div className="cta-row">
           <Link href="/journey" className="btn primary">
-            ✨ Start your journey
+            ⚡ Start the quest
           </Link>
         </div>
         <div className="miniproof">
@@ -54,7 +54,7 @@ export function Hero() {
             <b>5</b> worlds to explore
           </div>
           <div>
-            <b>{LIVE_COUNT}</b> hands-on lessons
+            <b>{LIVE_COUNT}</b> superpowers to unlock
           </div>
           <div>
             <b>1</b> buddy that&apos;s all yours
