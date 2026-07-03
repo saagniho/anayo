@@ -79,6 +79,26 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .miniproof{display:flex;gap:22px;margin-top:30px;color:var(--mute2);font-size:13px;font-weight:600;}
 .miniproof b{color:var(--ink);font-family:var(--display);font-size:20px;display:block;}
 
+/* ─────────────────── hero: player profiles ─────────────────── */
+.namebox{margin-top:18px;animation:fadeUp .3s ease both;}
+.namebox label{display:block;color:var(--mute);font-weight:600;font-size:14px;}
+.namebox-row{display:flex;gap:10px;margin-top:9px;flex-wrap:wrap;}
+.namebox input{background:var(--glass);border:1px solid var(--glass-brd);border-radius:13px;padding:11px 16px;color:var(--ink);font-family:var(--body);font-size:15.5px;font-weight:600;width:200px;max-width:100%;outline:none;transition:.2s;}
+.namebox input:focus{border-color:var(--violet-2);box-shadow:0 0 0 3px rgba(139,92,255,.25);}
+.namebox input::placeholder{color:var(--mute2);font-weight:500;}
+.confirm-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px;color:var(--amber);font-weight:600;font-size:14.5px;animation:fadeUp .25s ease both;}
+.btn.ghost.danger{border-color:rgba(255,122,89,.5);color:var(--coral);}
+.btn.ghost.danger:hover{background:rgba(255,122,89,.12);}
+.hero-links{margin-top:18px;}
+.linkbtn{background:none;border:none;cursor:pointer;color:var(--mute2);font-family:var(--body);font-weight:600;font-size:13.5px;text-decoration:underline;text-underline-offset:3px;padding:0;transition:.2s;}
+.linkbtn:hover{color:var(--violet-2);}
+.picker{margin-top:12px;display:flex;flex-direction:column;gap:8px;background:var(--glass);border:1px solid var(--glass-brd);border-radius:16px;padding:14px;max-width:340px;animation:fadeUp .25s ease both;}
+.picker-item{background:rgba(255,255,255,.04);border:1px solid var(--glass-brd);border-radius:12px;padding:11px 15px;color:var(--ink);font-family:var(--body);font-weight:600;font-size:14.5px;text-align:left;cursor:pointer;transition:.2s;}
+.picker-item:hover{background:rgba(255,255,255,.1);transform:translateY(-1px);}
+.picker-item.on{border-color:var(--violet-2);background:rgba(139,92,255,.15);}
+.picker-item.add{color:var(--violet-2);border-style:dashed;}
+.picker .namebox{margin-top:2px;}
+
 /* ───────────────────────── buddy stage ───────────────────────── */
 .stage{position:relative;display:grid;place-items:center;min-height:430px;}
 .halo{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,255,.45),transparent 70%);animation:breathe 5s ease-in-out infinite;}

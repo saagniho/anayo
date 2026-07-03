@@ -179,6 +179,17 @@ jobs:
 ## Phase 2 — Progress engine (foundation for all UX work)
 
 ### 2.1 Versioned progress store
+> **DONE (modified) — commit 9daee32.** Implemented as a **player-profile
+> store** instead of a single progress track: key `anayo:save` holds
+> `{ v: 1, activeId, players: Player[] }` where
+> `Player = { id, name, completed, lastLesson?, updatedAt }` — multiple kids
+> can share a browser. Legacy `anayo:completed` migrates into a nameless
+> player (legacy key deleted, contrary to the spec below — nothing else read
+> it). `abilities` was dropped: it is derivable from `completed` via the
+> registry. Hook is `usePlayer()` in the same module. `nextLesson()` shipped;
+> `isUnlocked()` remains open for 3.2.
+
+Original spec (superseded):
 Rewrite `src/lib/progress.ts`:
 
 ```ts
@@ -213,6 +224,9 @@ export type Progress = {
   migrates correctly.
 
 ### 2.2 Save codes (progress portability, no accounts)
+> **Note:** with the profile store, a code should carry one player:
+> `{ name, completed, lastLesson }` — import creates/updates a player.
+
 - `src/lib/save-code.ts`: `exportCode(p: Progress): string` — compact JSON →
   base64url, prefixed `ANAYO1.`; `importCode(s): Progress | null` — validates
   shape, rejects garbage.
@@ -235,6 +249,14 @@ Design rules for every task in this phase (also apply to Phase 4):
    no mode toggles mid-flow.
 
 ### 3.1 Landing page = one door
+> **DONE (extended).** Hero is now player-aware via `usePlayer()`: fresh
+> visitors get the quest pitch + a skippable "What should Anayo call you?"
+> name capture; returning players get "Welcome back, {name}" with a
+> `▶ Continue: {title}` primary CTA, an inline two-step "Start from scratch"
+> reset, and a switch-player picker (＋ New player). All-done state links to
+> `/journey`. World preview cards were already removed in an earlier pass.
+
+Original spec:
 `src/app/page.tsx`, `src/components/hero.tsx`:
 - Hero shows **one** primary CTA (client component using `useProgress()`):
   - No progress → `▶ Start your journey` → href of lesson 1.
