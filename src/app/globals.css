@@ -156,16 +156,35 @@ h1.hero-h{font-family:var(--display);font-weight:700;font-size:54px;line-height:
 .rule-card{background:linear-gradient(135deg,rgba(139,92,255,.18),rgba(39,224,240,.1));border:1px solid rgba(139,92,255,.4);border-radius:14px;padding:14px 16px;color:var(--ink);font-size:15px;line-height:1.5;text-align:center;margin-bottom:14px;}
 .rule-card b{color:var(--violet-2);}
 .guide{text-align:center;font-family:var(--display);font-weight:600;font-size:16px;color:#fff;margin-bottom:16px;}
+
+/* ─────────────── guided-learning primitives (GuideBar / BigButton) ─────────────── */
+.guidebar{display:flex;flex-direction:column;align-items:center;gap:7px;margin-bottom:16px;animation:fadeUp .3s ease both;}
+.guidebar-dots{display:flex;gap:6px;}
+.gdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);transition:.2s;}
+.gdot.done{background:var(--green);}
+.gdot.on{background:var(--violet-2);transform:scale(1.35);}
+.guidebar-text{font-family:var(--display);font-weight:600;font-size:16.5px;color:#fff;text-align:center;margin:0;line-height:1.4;}
+.bigbtn{font-size:17px;padding:14px 28px;}
+
+/* end-of-lesson learning card */
+.learn-card{background:linear-gradient(135deg,rgba(139,92,255,.16),rgba(39,224,240,.08));border:1.5px solid rgba(139,92,255,.5);border-radius:16px;padding:18px 20px;margin:0 0 20px;text-align:left;animation:fadeUp .4s ease both;}
+.learn-card-head{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--violet-2);margin-bottom:8px;}
+.learn-card-big{font-family:var(--display);font-weight:700;font-size:19px;color:#fff;line-height:1.35;margin:0 0 10px;}
+.learn-card-body{color:var(--ink);font-size:15px;line-height:1.6;margin:0;}
 .field-hint{text-align:center;color:var(--mute2);font-size:12.5px;font-weight:600;margin:2px 0 10px;}
 .blobtile:hover .blobdot{filter:brightness(1.18);}
 .blobtag{position:absolute;top:-2px;right:-6px;font-size:15px;white-space:nowrap;}
 .acc{height:14px;border-radius:10px;background:rgba(255,255,255,.08);overflow:hidden;margin:14px 0 4px;}
 .acc i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--green));transition:.8s cubic-bezier(.5,1.4,.5,1);}
 .toy-actions{display:flex;gap:12px;justify-content:center;margin-top:6px;}
-.brushes{display:flex;gap:10px;justify-content:center;margin-bottom:18px;}
-.brush{font-family:var(--display);font-weight:600;font-size:15px;padding:10px 18px;border-radius:12px;border:1px solid var(--glass-brd);background:var(--glass);color:var(--mute);cursor:pointer;transition:.18s;}
-.brush:hover{color:#fff;}
-.brush.on{color:#fff;background:linear-gradient(135deg,var(--violet),#6d3bff);border-color:var(--violet-2);box-shadow:0 6px 18px rgba(109,59,255,.4);}
+.wai-secret{background:linear-gradient(135deg,rgba(255,184,77,.14),rgba(255,93,177,.08));border:1px solid rgba(255,184,77,.45);border-radius:14px;padding:16px 18px;color:var(--ink);font-size:15.5px;line-height:1.55;text-align:center;margin-bottom:18px;animation:fadeUp .35s ease both;}
+.wai-secret b{color:var(--amber);}
+.wai-rule{background:rgba(39,224,240,.08);border:1px solid rgba(39,224,240,.35);border-radius:14px;padding:14px 16px;margin:0 0 14px;text-align:center;font-size:15.5px;line-height:1.55;color:var(--ink);animation:fadeUp .35s ease both;}
+.wai-score{display:flex;justify-content:center;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:16px;color:var(--ink);margin:8px 0 2px;}
+.wai-score .arrow{color:var(--mute);}
+.blobdot.think{animation:waiThink .7s ease-in-out infinite;}
+@keyframes waiThink{0%,100%{filter:brightness(1)}50%{filter:brightness(1.7)}}
+.blobtag.pop{animation:numPop .3s cubic-bezier(.34,1.56,.64,1) both;}
 .taught{text-align:center;color:var(--mute);font-weight:600;font-size:13.5px;margin:6px 0 8px;}
 .taught b{color:var(--ink);}
 .hint{text-align:center;color:var(--amber);font-weight:600;font-size:13.5px;margin:0 0 12px;animation:fadeUp .3s ease both;}

@@ -33,7 +33,7 @@ const TOYS: Record<string, ComponentType<ToyProps>> = {
   "build-something-real": BuildSomethingRealToy,
 };
 
-type Phase = "hook" | "play" | "aha" | "done";
+type Phase = "hook" | "play" | "aha";
 
 function ConfettiBurst({ trigger }: { trigger: number }) {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -141,22 +141,15 @@ export function LessonPlayer({ lesson }: { worldSlug: string; lesson: LessonMeta
             <div className="ability-pop">
               {lesson.ability.icon} <b>{lesson.ability.label}</b> unlocked
             </div>
-            <p>{aha}</p>
-            <button className="btn primary" onClick={() => setPhase("done")}>
-              Got it! →
-            </button>
+            <div className="learn-card">
+              <div className="learn-card-head">🎓 What you learned</div>
+              <p className="learn-card-big">{lesson.concept}</p>
+              <p className="learn-card-body">{aha}</p>
+            </div>
+            <Link href="/journey" className="btn primary">
+              ← Back to the journey
+            </Link>
           </div>
-        </div>
-      )}
-
-      {phase === "done" && (
-        <div className="stage-card">
-          <div className="big-emoji">🎉</div>
-          <h1 className="lesson-title">Anayo learned to {lesson.ability.label}!</h1>
-          <p className="hook">One superpower down. More lessons are landing soon.</p>
-          <Link href="/journey" className="btn primary">
-            ← Back to the journey
-          </Link>
         </div>
       )}
     </div>
