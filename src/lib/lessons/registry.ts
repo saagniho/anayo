@@ -251,3 +251,13 @@ export function getLesson(worldSlug: string, lessonSlug: string) {
 export function allLessons() {
   return WORLDS.flatMap((w) => w.lessons.map((l) => ({ world: w, lesson: l })));
 }
+
+/** First live lesson not yet completed — the "continue here" target. */
+export function nextLesson(completed: string[]) {
+  for (const w of WORLDS) {
+    for (const l of w.lessons) {
+      if (l.live && !completed.includes(l.slug)) return { world: w, lesson: l };
+    }
+  }
+  return null;
+}

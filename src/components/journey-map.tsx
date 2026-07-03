@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import type { World } from "@/lib/lessons/types";
+import { nextLesson } from "@/lib/lessons/registry";
 import { getCompleted } from "@/lib/progress";
 
 const WORLD_ICONS: Record<string, string> = {
@@ -26,15 +27,7 @@ export function JourneyMap({ worlds }: { worlds: World[] }) {
   for (const w of worlds) for (const l of w.lessons) lessonNums.set(l.id, ++num);
 
   // First live lesson that isn't done = "next"
-  let nextSlug: string | null = null;
-  outer: for (const w of worlds) {
-    for (const l of w.lessons) {
-      if (l.live && !completed.includes(l.slug)) {
-        nextSlug = l.slug;
-        break outer;
-      }
-    }
-  }
+  const nextSlug = nextLesson(completed)?.lesson.slug ?? null;
 
   return (
     <div className="jmap">
